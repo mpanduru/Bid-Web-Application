@@ -3,12 +3,13 @@ import '../../App.css';
 import { Alert, Button, Form, Modal } from 'react-bootstrap';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 
-export const LoginComp = () => {
+export const RegisterComp = () => {
   const [showForm, setShowForm] = useState(false);
   const [error, setError] = useState('');
 
   const emailRef = useRef();
   const passwordRef = useRef();
+  const cnfPasswordRef = useRef();
 
   const openForm = () => setShowForm(true);
   const closeForm = () => setShowForm(false);
@@ -16,20 +17,24 @@ export const LoginComp = () => {
     e.preventDefault();
     setError('');
 
+    if (passwordRef.current.value != cnfPasswordRef.current.value)
+      return setError("Passwords do not match");
+
     console.log(`email is ${emailRef.current.value}`);
     console.log(`password is ${passwordRef.current.value}`);
+    console.log(`cnfPassword is ${cnfPasswordRef.current.value}`);
   }
 
   return (
     <>
       <div onClick={openForm} className="btn secondarybutton btn-rounded scale-on-hover">
-        Login
+        Register
       </div>
       <Modal centered show={showForm} onHide={closeForm}>
         <form onSubmit={submitForm}>
           <Modal.Header>
             <Modal.Title>
-              Login here
+              Register here
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -41,6 +46,10 @@ export const LoginComp = () => {
             <Form.Group>
               <Form.Label>Password</Form.Label>
               <Form.Control type='password' required ref={passwordRef} />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control type='password' required ref={cnfPasswordRef} />
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>

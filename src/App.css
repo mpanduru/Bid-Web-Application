@@ -32,7 +32,19 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.25) perspective(1px)
+}
+
+.secondarybutton {
+  color: cornsilk !important;
+  font-weight: bold !important;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: darkgray !important;
 }
