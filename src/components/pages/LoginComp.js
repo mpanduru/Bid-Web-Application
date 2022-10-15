@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import '../../App.css';
 import { Alert, Button, Form, Modal } from 'react-bootstrap';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import { AuthContext } from '../../context/AuthContext';
 
 export const LoginComp = () => {
   const [showForm, setShowForm] = useState(false);
@@ -9,20 +10,25 @@ export const LoginComp = () => {
 
   const emailRef = useRef();
   const passwordRef = useRef();
+  const { login } = useContext(AuthContext);
 
   const openForm = () => setShowForm(true);
   const closeForm = () => setShowForm(false);
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     setError('');
 
-    console.log(`email is ${emailRef.current.value}`);
-    console.log(`password is ${passwordRef.current.value}`);
+    try {
+      await login(emailRef.current.value, passwordRef.current.value);
+      closeForm();
+    } catch (error) {
+      setError(error);
+    }
   }
 
   return (
     <>
-      <div onClick={openForm} className="btn secondarybutton btn-rounded scale-on-hover">
+      <div onClick={openForm} className="btn secondarybutton btn-rounded scale-on-hover me-3">
         Login
       </div>
       <Modal centered show={showForm} onHide={closeForm}>
