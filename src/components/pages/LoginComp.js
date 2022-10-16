@@ -3,6 +3,7 @@ import '../../App.css';
 import { Alert, Button, Form, Modal } from 'react-bootstrap';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import { AuthContext } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginComp = () => {
   const [showForm, setShowForm] = useState(false);
@@ -11,6 +12,7 @@ export const LoginComp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const openForm = () => setShowForm(true);
   const closeForm = () => setShowForm(false);
@@ -21,6 +23,7 @@ export const LoginComp = () => {
     try {
       await login(emailRef.current.value, passwordRef.current.value);
       closeForm();
+      navigate("/how-to-buy");
     } catch (error) {
       setError(error);
     }
@@ -51,7 +54,7 @@ export const LoginComp = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={closeForm} className='secondarybutton'>Cancel</Button>
-            <Button onClick={submitForm} className='secondarybutton'>Submit</Button>
+            <Button onClick={submitForm} className='secondarybutton' type='submit'>Submit</Button>
           </Modal.Footer>
         </form>
       </Modal>

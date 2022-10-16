@@ -70,7 +70,7 @@ export const RegisterComp = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={closeForm} className='secondarybutton'>Cancel</Button>
-            <Button onClick={submitForm} className='secondarybutton'>Submit</Button>
+            <Button onClick={submitForm} className='secondarybutton' type='submit'>Submit</Button>
           </Modal.Footer>
         </form>
       </Modal>

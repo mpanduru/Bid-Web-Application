@@ -4,14 +4,16 @@ import { LoginComp } from './LoginComp';
 import { RegisterComp } from './RegisterComp';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import { AuthContext } from '../../context/AuthContext';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { firestore } from '../../firebase';
 
 export const NavComp = () => {
   const { currentUser, logout } = useContext(AuthContext)
   return (
     <nav className="navbar navbar-light">
       <div className="container-fluid">
-        <a className="navbar-brand">
-          <img src={logoImg} alt="logo" height="100" className='shadow-none'/>
+        <a className="navbar-brand" href='/'>
+          <img src={logoImg} alt="logo" height="100" className='shadow-none' />
         </a>
         <div className="d-flex">
           <div className="col">

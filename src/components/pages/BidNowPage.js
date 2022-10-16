@@ -1,7 +1,13 @@
-import React from 'react'
+import React, {useContext, useState} from 'react'
+import { AuctionAdd } from '../cards/AuctionAdd';
 
 export const BidNowPage = () => {
+
     return (
-        <div>BID NOW HERE</div>
+        <div className='py-5'>
+            <div className='container'>
+                <AuctionAdd />
+            </div>
+        </div>
     )
 }
