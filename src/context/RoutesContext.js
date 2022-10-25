@@ -4,6 +4,7 @@ import { HomePage } from "../components/pages/HomePage";
 import { HowToBuy } from "../components/pages/HowToBuy";
 import { BidNowPage } from '../components/pages/BidNowPage';
 import { AuctioneerDirectory } from '../components/pages/AuctioneerDirectory';
+import { UserItems } from '../components/pages/UserItems';
 
 export const RoutesContext = () => {
     const location = useLocation();
@@ -14,6 +15,7 @@ export const RoutesContext = () => {
             <Route path="/how-to-buy/:id" element={<HowToBuy />} />
             <Route path="/bid-now" element={<BidNowPage />} />
             <Route path="/auctioneer-directory" element={<AuctioneerDirectory />} />
+            <Route path='/my-items' element={<UserItems />} />
         </Routes>
     )
 }

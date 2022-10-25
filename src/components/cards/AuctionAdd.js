@@ -15,7 +15,6 @@ export const AuctionAdd = () => {
     const itemDesc = useRef();
     const startPrice = useRef();
     const buyNowPrice = useRef();
-    const itemDuration = useRef();
     const itemImage = useRef();
 
     const { currentUser } = useContext(AuthContext);
@@ -36,9 +35,10 @@ export const AuctionAdd = () => {
                 startPrice: startPrice.current.value,
                 owner: currentUser.email,
                 buynow: buyNowPrice.current.value,
-                startduration: itemDuration.current.value,
                 description: itemDesc.current.value,
-                imagename: itemTitle.current.value
+                active: true,
+                currentHighestBidder: "No one bidded for this auction",
+                boughtBy: "",
             });
         } catch (error) {
             console.log(error)
@@ -53,6 +53,7 @@ export const AuctionAdd = () => {
         }
 
         closeForm();
+        window.location.reload();
     }
 
     return (
@@ -62,7 +63,7 @@ export const AuctionAdd = () => {
                     <div>
                         <div className="col d-flex justify-content-center my-3">
                             <div onClick={openForm} className='btn btn-outline-secondary mx-2'>
-                                NEW ACTION
+                                NEW AUCTION
                             </div>
                         </div>
                         <Modal centered show={showForm} onHide={closeForm}>
@@ -96,12 +97,6 @@ export const AuctionAdd = () => {
                                             <Form.Group>
                                                 <Form.Label>Buy Now Price</Form.Label>
                                                 <Form.Control type="number" required ref={buyNowPrice} />
-                                            </Form.Group>
-                                        </Col>
-                                        <Col>
-                                            <Form.Group>
-                                                <Form.Label>Item Duration (H)</Form.Label>
-                                                <Form.Control type="number" required ref={itemDuration} />
                                             </Form.Group>
                                         </Col>
                                     </Row>

@@ -34,6 +34,35 @@ export function FirestoreContextGetQuery(collectionName, field, separator, expec
     )
 }
 
+export function FirestoreContextGetID(collectionName, array) {
+    const usersRef = collection(firestore, collectionName);
+
+    const [value, loading, error] = useCollection(
+        usersRef,
+        {
+            snapshotListenOptions: { includeMetadataChanges: true },
+        }
+    );
+
+    const addCurrentFieldArray = (val) => {
+        array.push(val);
+    }
+
+    return (
+        <>
+            {error && <strong>Error</strong>}
+            {loading && <span>Loading...</span>}
+            {value && (
+                <span>
+                    {value.docs.map((doc) => (
+                        addCurrentFieldArray(doc.id)
+                    ))}
+                </span>
+            )}
+        </>
+    )
+}
+
 export function FirestoreContextGetCollection(collectionName, array, searchedField) {
     const usersRef = collection(firestore, collectionName);
 
@@ -60,5 +89,21 @@ export function FirestoreContextGetCollection(collectionName, array, searchedFie
                 </span>
             )}
         </>
+    )
+}
+
+export const updatePrice = (title, element) => {
+    const myarray = [];
+
+    try {
+        FirestoreContextGetID('auctions', 'title', '==', title, myarray);
+    } catch (error) {
+        console.log(error)
+    }
+
+    return (
+        <div>
+            {element = myarray[0]}
+        </div>
     )
 }

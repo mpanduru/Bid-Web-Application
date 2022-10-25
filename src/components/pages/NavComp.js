@@ -6,6 +6,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import { AuthContext } from '../../context/AuthContext';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebase';
+import { MyItems } from './MyItems';
 
 export const NavComp = () => {
   const { currentUser, logout } = useContext(AuthContext)
@@ -19,6 +20,7 @@ export const NavComp = () => {
           <div className="col">
             {currentUser ? (
               <>
+                <MyItems />
                 <div className='btn btn-outline-secondary mx2 disabled me-2'>{currentUser.email}</div>
                 <div className="btn secondarybutton btn-rounded scale-on-hover me-2" onClick={() => logout()}>Logout</div>
               </>
