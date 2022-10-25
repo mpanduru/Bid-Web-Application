@@ -1,13 +1,13 @@
-import React, {useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 import { AuctionAdd } from '../cards/AuctionAdd';
+import { Items } from '../cards/Items';
 
 export const BidNowPage = () => {
 
     return (
-        <div className='py-5'>
-            <div className='container'>
-                <AuctionAdd />
-            </div>
+        <div>
+            <AuctionAdd />
+            <Items />
         </div>
     )
 }

@@ -4,9 +4,11 @@ import { AboutUs } from '../cards/AboutUs';
 
 export const HomePage = () => {
     return (
-        <div>
-            <AuctionCard />
-            <AboutUs />
-        </div>
+        <div className=''>
+            <div>
+                < AuctionCard />
+                <AboutUs />
+            </div>
+        </div >
     )
 }

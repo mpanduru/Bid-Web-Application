@@ -10,7 +10,7 @@ import { firestore } from '../../firebase';
 export const NavComp = () => {
   const { currentUser, logout } = useContext(AuthContext)
   return (
-    <nav className="navbar navbar-light">
+    <nav className="navbar bg-img myBackground2">
       <div className="container-fluid">
         <a className="navbar-brand" href='/'>
           <img src={logoImg} alt="logo" height="100" className='shadow-none' />

@@ -2,11 +2,45 @@
   transform: scale(1.25) perspective(1px)
 }
 
+.App {
+  margin: 0;
+  height: 100%;
+}
+
+.null-fill {
+  height: 100px;
+}
+
+.null-fill-small {
+  height: 50px;
+}
+
+.small-scale-on-hover-X:hover {
+  transform: scale(1.05) perspective(1px);
+}
+
+.myBackground {
+  background-image: url(./images/background.jpg);
+}
+
+.myBackground2 {
+  background-image: url(./images/navbar-bg.jpg);
+}
+
+.img-sizer {
+  width: 50%;
+  height: 300px;
+}
+
 .secondarybutton {
   color: cornsilk !important;
   font-weight: bold !important;
   font-family: 'Times New Roman', Times, serif;
   background-color: darkgray !important;
+}
+
+.on-overflow {
+  word-wrap: break-word !important;
 }
 
 .background-img {

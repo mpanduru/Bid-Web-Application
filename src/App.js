@@ -10,7 +10,9 @@ function App() {
       < AuthProvider >
         <Router>
           <NavComp />
-          <RoutesContext />
+          <div className='bg-img myBackground'>
+            <RoutesContext />
+          </div>
         </Router>
       </AuthProvider >
     </div>

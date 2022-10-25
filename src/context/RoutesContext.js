@@ -11,6 +11,7 @@ export const RoutesContext = () => {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/how-to-buy" element={<HowToBuy />} />
+            <Route path="/how-to-buy/:id" element={<HowToBuy />} />
             <Route path="/bid-now" element={<BidNowPage />} />
             <Route path="/auctioneer-directory" element={<AuctioneerDirectory />} />
         </Routes>
