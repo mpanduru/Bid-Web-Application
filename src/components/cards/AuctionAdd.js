@@ -89,13 +89,13 @@ export const AuctionAdd = () => {
                                     <Row>
                                         <Col>
                                             <Form.Group>
-                                                <Form.Label>Start Price</Form.Label>
+                                                <Form.Label>Start Price ($)</Form.Label>
                                                 <Form.Control type="number" required ref={startPrice} />
                                             </Form.Group>
                                         </Col>
                                         <Col>
                                             <Form.Group>
-                                                <Form.Label>Buy Now Price</Form.Label>
+                                                <Form.Label>Buy Now Price ($)</Form.Label>
                                                 <Form.Control type="number" required ref={buyNowPrice} />
                                             </Form.Group>
                                         </Col>

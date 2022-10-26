@@ -54,7 +54,7 @@ export const BidAuction = () => {
                                     <Row>
                                         <Col>
                                             <Form.Group>
-                                                <Form.Label>Bidding Price</Form.Label>
+                                                <Form.Label>Bidding Price ($)</Form.Label>
                                                 <Form.Control type="number" required ref={currentPrice} />
                                             </Form.Group>
                                         </Col>

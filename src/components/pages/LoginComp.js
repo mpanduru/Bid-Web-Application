@@ -23,7 +23,6 @@ export const LoginComp = () => {
     try {
       await login(emailRef.current.value, passwordRef.current.value);
       closeForm();
-      navigate("/how-to-buy");
     } catch (error) {
       setError(error);
     }

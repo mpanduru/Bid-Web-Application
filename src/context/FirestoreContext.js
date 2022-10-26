@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { collection, query, where } from 'firebase/firestore';
 import { useCollection, useCollectionOnce } from 'react-firebase-hooks/firestore';
 import { firestore } from '../firebase';
 import { json } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 
 export function FirestoreContextGetQuery(collectionName, field, separator, expectedValue, array, searchedField) {
     const usersRef = collection(firestore, collectionName);
@@ -21,8 +22,8 @@ export function FirestoreContextGetQuery(collectionName, field, separator, expec
 
     return (
         <>
-            {error && <strong>Error</strong>}
-            {loading && <span>Loading...</span>}
+            {error && <strong></strong>}
+            {loading && <span></span>}
             {value && (
                 <span>
                     {value.docs.map((doc) => (

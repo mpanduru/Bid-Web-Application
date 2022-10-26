@@ -32,11 +32,21 @@
   height: 400px;
 }
 
+.button-sizer {
+  height: 100px;
+}
+
 .secondarybutton {
   color: cornsilk !important;
   font-weight: bold !important;
   font-family: 'Times New Roman', Times, serif;
   background-color: darkgray !important;
+}
+
+.title {
+  color: gray;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .on-overflow {

@@ -39,13 +39,13 @@ export const AuctionItem = (imageName, title, description, startpice, buynow, bi
                     <p className="card-text">{description}</p>
                     <div className='row'>
                         <div className='col'>
-                            <p className="card-text fs-4"><small className="text-muted">Current price: {startpice}</small></p>
+                            <p className="card-text fs-4"><small className="text-muted">Current price: {startpice} $</small></p>
                         </div>
                         <div className='col'>
                             <p className="card-text fs-4"><small className="text-muted">Highest bidder: {bidder}</small></p>
                         </div>
                     </div>
-                    <p className="card-text"><small className="text-muted">Buy now price: {buynow}</small></p>
+                    <p className="card-text"><small className="text-muted">Buy now price: {buynow} $</small></p>
                     <p className='card-text'><small className="text-muted fs-6">Bid ID: {id}</small></p>
                     {owner == currentUser.email && currentUser ?
                         <p className='btn btn-secondary me-5 col' onClick={onendbid}>End Bidding Now!</p>

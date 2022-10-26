@@ -7,7 +7,7 @@ import { FirestoreContextGetQuery } from '../../context/FirestoreContext';
 
 export const HowToBuy = () => {
     return (
-        <div>
+        <div className='text-center'>
             <div className='row d-flex justify-context-center'>
                 <h1>1. Browse</h1>
                 <div className='fs-4 fw-light'>
